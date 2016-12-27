@@ -1,0 +1,29 @@
+$normal: 14px;
+
+$roboto: 'Roboto', sans-serif;
+$os: 'Open Sans', sans-serif;
+$arial: 'Arial-Regular';
+$proxima: 'Conv_proximanova-light';
+
+
+$min-s:    "only screen and (min-width : 768px)";
+
+$bp-large:      "only screen and (max-width : 1239px)";
+$bp-medium:     "only screen and (max-width : 1053px)";
+$bp-small:      "only screen and (max-width : 767px)";
+$bp-smm:      "only screen and (max-width : 550px)";
+$bp-xsmall:    "only screen and (max-width : 479px)";
+$bp-xxsmall:    "only screen and (max-width : 320px)";
+
+
+// ul {
+	// @media #{$bp-small} {
+	// 	width: 100%;
+	// }
+// }
+
+// ul {  
+//   @include respond-to(desktope) {
+//     width: 400%;
+//   }
+// }
