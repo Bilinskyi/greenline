@@ -7,6 +7,9 @@
 
 .padding-stl-1 {
 	padding: 80px 0 55px;
+	@media #{$bp-large} {
+		padding: 50px 0 25px;
+	}
 }
 
 .text-xs {
@@ -60,6 +63,9 @@
 	text-align: center;
 	position: relative;
 	padding-bottom: 17px;
+	@media #{$bp-small} {
+		font-size: 22px;
+	}
 	&::after {
 		content: '';
 		display: block;
@@ -151,6 +157,7 @@
 				background-size: 100% 100%;
 			}
 			&.d2-icon {
+				margin-top: 2px;
 				background: url('../img/d2-footer.png') center top no-repeat;
 				width: 28px;
 				height: 24px;
@@ -161,6 +168,9 @@
 		display: inline-block;
 		vertical-align: middle;
 		margin: 0 12px;
+		@media #{$bp-medium} {
+			margin: 0 6px;
+		}
 		a {
 			display: inline-block;
 			text-decoration: none;
@@ -180,9 +190,10 @@
 				background-size: 100% 100%;
 			}
 			&.d2-icon {
+				margin-top: 2px;
 				background: url('../img/d2-icon.png') center top no-repeat;
 				width: 24px;
-				height: 17px;
+				height: 16px;
 			}
 		}
 	}
@@ -197,8 +208,31 @@ header {
 	left: 0;
 	width: 100%;
 	z-index: 5;
+	.btn-hide {
+		background: url('../img/menu.svg') center top no-repeat;
+		width: 32px;
+		height: 32px;
+		background-size: 100% 100%;
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		top: 10px;
+		display: none;
+		@media #{$bp-medium} {
+			display: block;
+		}
+		@media #{$bp-small} {
+			left: auto;
+			right: 15px;
+		}
+	}
 	.top-line-wrapp {
 		padding: 6px 0;
+		@media #{$bp-small} {
+			display: none;
+		}
 		&>* {
 			vertical-align: middle;
 			display: inline-block;
@@ -214,6 +248,9 @@ header {
 			text-transform: uppercase;
 			position: relative;
 			padding-left: 26px;
+			@media #{$bp-medium} {
+				font-size: 13px;
+			}
 			i.phone-icon {
 				display: inline-block;
 				background: url('../img/phone-icon.svg') center top no-repeat;
@@ -231,6 +268,9 @@ header {
 			line-height: 15px;
 			position: relative;
 			padding-left: 30px;
+			@media #{$bp-medium} {
+				font-size: 13px;
+			}
 			i.mail-icon {
 				display: inline-block;
 				background: url('../img/mail-icon.svg') center top no-repeat;
@@ -245,6 +285,12 @@ header {
 		}
 		.top-search-form {
 			width: 305px;
+			@media #{$bp-large} {
+				width: 280px;
+			}
+			@media #{$bp-medium} {
+				width: 200px;
+			}
 			.wrapp-input {
 				position: relative;
 				border: 1px solid white;
@@ -285,30 +331,89 @@ header {
 	.bg-color {
 		background-color: #fff;
 		padding: 26px 30px 0;
+		position: relative;
+		@media #{$bp-large} {
+			padding: 15px 20px 0;
+		}
+		@media #{$bp-medium} {
+			padding-top: 12px;
+			padding-bottom: 12px;
+		}
+		@media #{$bp-small} {
+			padding: 10px 15px 10px;
+		}
 		.button {
 			float: right;
 			margin-top: 8px;
+			@media #{$bp-medium} {
+				margin-top: 0;
+				height: 30px;
+				line-height: 30px;
+				font-size: 10px;
+			}
+			@media #{$bp-small} {
+				display: none;
+			}
 		}
 		.logo {
 			display: block;
 			text-decoration: none;
 			float: left;
+			@media #{$bp-medium} {
+				width: 130px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			@media #{$bp-xsmall} {
+				width: 110px;
+			}
 			img {
 				display: block;
+				@media #{$bp-medium} {
+					max-width: 100%;
+					height: auto;
+				}
 			}
 		}
 		.main-nav {
 			float: left;
 			padding-top: 18px;
 			padding-left: 115px;
-			li {
+			@media #{$bp-large} {
+				padding-left: 50px;
+			}
+			@media #{$bp-medium} {
+				padding-left: 0;
+				display: none;
+				float: none;
+				width: 100%;
+				clear: both;
+				text-align: center;
+				position: absolute;
+				background: #fff;
+				top: 100%;
+				left: 0;
+				padding-top: 0;
+				padding-bottom: 5px;
+			}
+			@media #{$min-m} {
+				display: inline-block !important;
+			}
+			& > li {
+				position: relative;
 				display: inline-block;
 				&:hover {
-					a {
+					&>a {
 						border-bottom: 3px solid #8ac540;
 					}
+					@media #{$min-m} {
+						ul {
+							opacity: 1;
+							visibility: visible;
+						}
+					}
 				}
-				a {
+				&>a {
 					display: block;
 					color: black;
 					font-size: 13px;
@@ -319,8 +424,65 @@ header {
 					padding: 0 25px 50px;
 					border-bottom: 3px solid transparent;
 					transition: all .15s;
+					@media #{$bp-large} {
+						font-size: 12px;
+						padding: 0 15px 35px;
+					}
+					@media #{$bp-medium} {
+						padding: 0 12px 23px;
+					}
+				}
+				@media #{$bp-medium} {
+					display: block;
+					&>a {
+						display: inline-block;
+						padding-bottom: 3px;
+						margin-bottom: 3px;
+					}
 				}
 			}
+			& > li > ul {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 341px;
+				background-color: rgba(255,255,255,.8);
+				padding: 10px 23px;
+				opacity: 0;
+				visibility: hidden;
+				@media #{$bp-medium} {
+					position: relative;
+					text-align: center;
+					width: 100%;
+					display: none;
+					opacity: 1;
+					visibility: visible;
+				}
+				@media #{$min-m} {
+					display: block !important;
+				}
+				li {
+					margin: 10px 0;
+					@media #{$bp-medium} {
+						margin: 0px 0;
+					}
+					a {
+						text-decoration: none;
+						display: inline-block;
+						font-family: $os;
+						color: #060301;
+						font-size: 15px;
+						@media #{$bp-medium} {
+							font-size: 12px;
+							line-height: 13px;
+						}
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+
 		}
 	}
 }
@@ -367,6 +529,18 @@ header {
 .section-greenline {
 	background-color: #8ac540;
 	padding: 32px 0;
+	@media #{$bp-large} {
+		padding: 25px 0;
+	}
+	@media #{$bp-medium} {
+		padding: 10px 0;
+	}
+
+	[class*=col] {
+		@media #{$bp-medium} {
+			margin: 20px 0;
+		}
+	}
 	.advantages {
 		position: relative;
 		padding-left: 30px;
@@ -375,6 +549,16 @@ header {
 		font-size: 15px;
 		line-height: 30px;
 		text-transform: uppercase;
+		@media #{$bp-large} {
+			line-height: 23px;
+			padding-left: 20px;
+			font-size: 13px;
+		}
+		@media #{$bp-small} {
+			font-size: 12px;
+			line-height: 18px;
+			margin-left: 65px;
+		}
 		i {
 			display: inline-block;
 			position: absolute;
@@ -392,6 +576,10 @@ header {
 				width: 48px;
 				height: 59px;
 				background-size: 100% 100%;
+				@media #{$bp-medium} {
+					right: auto;
+					left: -55px;
+				}
 			}
 			&.icon-1-3 {
 				background: url('../img/icon-1-3.svg') center top no-repeat;
@@ -416,6 +604,12 @@ header {
 	.wrapp-service {
 		margin: 0 -10px;
 		padding-top: 50px;
+		@media #{$bp-large} {
+			padding-top: 35px;
+		}
+		@media #{$bp-medium} {
+			text-align: center;
+		}
 		[class*=col] {
 			padding: 0 10px;
 			margin-bottom: 25px;
@@ -431,15 +625,26 @@ header {
 			color: black;
 			text-align: right;
 			padding-bottom: 80px;
+			@media #{$bp-medium} {
+				display: inline-block;
+				max-width: 281px;
+			}
 			.m-h-2 {
 				position: relative;
 				padding-top: 18px;
 				padding-bottom: 12px;
+				@media #{$bp-medium} {
+					padding-top: 12px;
+					padding-bottom: 10px;
+				}
 			}
 			.button-border {
 				position: absolute;
 				right: 20px;
 				bottom: 20px;
+				@media #{$bp-large} {
+					right: 15px;
+				}
 			}
 			h4 {
 				text-align: left;
@@ -449,6 +654,10 @@ header {
 				position: relative;
 				top: 50%;
 				transform: translateY(-50%);
+				@media #{$bp-large} {
+					font-size: 19px;
+					padding: 0 15px;
+				}
 			}
 			p {
 				margin: 0;
@@ -456,6 +665,11 @@ header {
 				padding: 0 20px;
 				font-size: 15px;
 				line-height: 24px;
+				@media #{$bp-large} {
+					font-size: 14px;
+					line-height: 18px;
+					padding: 0 15px;
+				}
 			}
 			img {
 				max-width: 100%;
@@ -479,6 +693,9 @@ header {
 	background: url('../img/bg-carousel.jpg') center top no-repeat;
 	background-size: cover;
 	position: relative;
+	@media #{$bp-large} {
+		padding: 60px 0;
+	}
 	.owl-item.active {
 		.owl-nav-custom {
 			display: block;
@@ -500,6 +717,10 @@ header {
 			background-color: #8ac540;
 			border-radius: 50%;
 			position: absolute;
+			@media #{$bp-medium} {
+				width: 34px;
+				height: 34px;
+			}
 			&:after {
 				content: '';
 				display: block;
@@ -516,20 +737,34 @@ header {
 		}
 		.customPrevBtn {
 			left: -25px;
+			@media #{$bp-medium} {
+				left: -17px;
+			}
 			&:after {
 				width: 13px;
 				height: 24px;
 				background: url('../img/arrow-left.svg') center top no-repeat;
 				background-size: 100% 100%;
+				@media #{$bp-medium} {
+					width: 7px;
+					height: 12px;
+				}
 			}
 		}
 		.customNextBtn {
 			right: -25px;
+			@media #{$bp-medium} {
+				right: -17px;
+			}
 			&:after {
 				width: 13px;
 				height: 25px;
 				background: url('../img/arrow-right.svg') center top no-repeat;
 				background-size: 100% 100%;
+				@media #{$bp-medium} {
+					width: 7px;
+					height: 12px;
+				}
 			}
 		}
 	}
@@ -539,9 +774,18 @@ header {
 		position: relative;
 		.slide-top-bg {
 			padding: 20px 35px 20px;
+			@media #{$bp-large} {
+				padding: 15px 30px 20px;
+			}
+			@media #{$bp-medium} {
+				padding: 10px 20px 10px;
+			}
 			p {
 				line-height: 30px;
 				text-align: left;
+				@media #{$bp-large} {
+					line-height: 25px;
+				}
 			}
 			.text-xs {
 				text-align: left;
@@ -554,6 +798,14 @@ header {
 				line-height: 36px;
 				margin: 0 0 15px;
 				padding-top: 16px;
+				@media #{$bp-large} {
+					font-size: 28px;
+					line-height: 32px;
+				}
+				@media #{$bp-medium} {
+					font-size: 24px;
+					line-height: 28px;
+				}
 			}
 		}
 		.wrapp-image-slider {
@@ -571,6 +823,9 @@ header {
 
 .section-our-work {
 	padding-bottom: 80px;
+	@media #{$bp-large} {
+		padding-bottom: 50px;
+	}
 	.inst-wrapp {
 		margin: 0 -10px;
 		text-align: center;
@@ -629,12 +884,24 @@ header {
 				transition: opacity .15s;
 				top: 50%;
 				transform: translateY(-50%) translateZ(0);
+				@media #{$bp-large} {
+					font-size: 20px;
+				}
+				@media #{$bp-medium} {
+					font-size: 12px;
+				}
 				em {
 					font-family: $play;
 					font-style: italic;
 					font-weight: 900;
 					text-transform: none;
 					font-size: 27px;
+					@media #{$bp-large} {
+						font-size: 22px;
+					}
+					@media #{$bp-medium} {
+						font-size: 14px;
+					}
 				}
 				i {
 					display: block;
@@ -660,6 +927,13 @@ header {
 		position: relative;
 		padding-bottom: 70px;
 		padding-top: 55px;
+		@media #{$bp-large} {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		@media #{$bp-medium} {
+			padding: 15px 0;
+		}
 		.owl-dots {
 			bottom: 0;
 		}
@@ -691,10 +965,17 @@ header {
 	background-color: #8ac540;
 	text-align: center;
 	padding: 27px 0;
+	@media #{$bp-medium} {
+		padding: 16px 0;
+	}
 	.menu-2 {
 		li {
 			display: inline-block;
 			margin: 0 24px;
+			@media #{$bp-small} {
+				display: block;
+				margin: 3px 0;
+			}
 			a {
 				text-decoration: none;
 				display: inline-block;
@@ -702,6 +983,9 @@ header {
 				font-size: 13px;
 				text-transform: uppercase;
 				font-family: $arial;
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		}
 	}
@@ -720,7 +1004,21 @@ header {
 }
 
 .section-map {
+	background-color: #fafafa;
 	padding: 30px 0 0;
+	@media #{$bp-small} {
+		padding: 15px 0 0;
+	}
+	.table {
+		@media #{$bp-small} {
+			display: block;
+			.t-cell {
+				display: block;
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
 	.container {
 		position: relative;
 		padding-bottom: 30px;
@@ -739,6 +1037,10 @@ header {
 		font-size: 13px;
 		line-height: 36px;
 		font-family: $arial;
+		@media #{$bp-medium} {
+			font-size: 12px;
+			line-height: 30px;
+		}
 	}
 	.map-block {
 		width: 66%;
@@ -752,14 +1054,27 @@ header {
 }
 
 
+.inl-bl {
+	display: inline-block;
+	position: relative;
+}
 
 footer {
+	background-color: #fafafa;
 	padding: 43px 0 40px;
+	@media #{$bp-small} {
+		padding: 20px 0 30px;
+	}
 	.bottom-social,
 	.copy,
 	.dev {
 		display: inline-block;
 		vertical-align: middle;
+		@media #{$bp-small} {
+			display: block;
+			text-align: center;
+			margin: 15px 0;
+		}
 	}
 	.copy {
 		color: black;
@@ -771,7 +1086,9 @@ footer {
 		color: black;
 		font-size: 13px;
 		font-family: $arial;
-		padding-right: 75px;
+		.inl-bl {
+			padding-right: 75px;
+		}
 		i {
 			display: inline-block;
 			position: absolute;
@@ -784,6 +1101,160 @@ footer {
 		}
 	}
 }
+
+
+
+
+
+.patch {
+	position: relative;
+	z-index: 2;
+	padding-top: 167px;
+	padding-bottom: 463px;
+	@media #{$bp-large} {
+		padding-top: 139px;
+	}
+	@media #{$bp-medium} {
+		padding-top: 113px;
+	}
+	@media #{$bp-small} {
+		padding-top: 67px;
+	}
+	@media #{$bp-xsmall} {
+		padding-bottom: 300px;
+	}
+	li {
+		display: inline-block;
+		color: white;
+		font-size: 13px;
+		font-family: $arial;
+		position: relative;
+		padding: 0 11px;
+		&:not(:last-child) {
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				right: -4px;
+				top: 50%;
+				transform: translateY(-50%);
+				background: url('../img/arrow-patch.svg') center top no-repeat;
+				width: 5px;
+				height: 9px;
+				background-size: 100% 100%;
+			}
+		}
+		a {
+			display: inline-block;
+			text-decoration: none;
+			color: #fff;
+			font-size: 13px;
+		}
+	}
+}
+
+
+.section-vacancies-bg {
+	background: url('../img/jobs-bg.jpg') center bottom no-repeat;
+	background-size: cover;
+	
+}
+
+
+.section-outvacancies {
+	padding-bottom: 70px;
+	background-color: #fafafa;
+	@media #{$bp-medium} {
+		padding-bottom: 50px;
+	}
+	@media #{$bp-small} {
+		padding-bottom: 40px;
+	}
+	.bgf {
+		background-color: #fff;
+		margin-top: -240px;
+		padding: 0 80px 70px;
+		position: relative;
+		@media #{$bp-medium} {
+			padding: 0 50px 50px;
+		}
+		@media #{$bp-small} {
+			padding: 0 30px 40px;
+		}
+		@media #{$bp-xsmall} {
+			padding: 0 20px 40px;
+			margin-top: -170px;
+		}
+	}
+	.specialist {
+		display: block;
+		margin-left: 222px;
+		margin-top: -200px;
+		margin-bottom: 35px;
+		max-width: 100%;
+		height: auto;
+		@media #{$bp-large} {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@media #{$bp-xsmall} {
+			margin-top: -80px;
+		}
+	}
+	.title {
+		margin-bottom: 55px;
+		@media #{$bp-medium} {
+			margin-bottom: 50px;
+		}
+		@media #{$bp-small} {
+			margin-bottom: 40px;
+		}
+		@media #{$bp-xsmall} {
+		      margin-bottom: 30px;
+		}
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 74px;
+		}
+	}
+	h4 {
+		font-size: 15px;
+		color: #8ac540;
+		line-height: 22px;
+		text-transform: uppercase;
+		font-family: $arialbd;
+		margin: 0 0 3px;
+		@media #{$bp-small} {
+			font-size: 14px;
+		}
+		&+p {
+			margin-bottom: 40px;
+			@media #{$bp-small} {
+				margin-bottom: 30px;
+			}
+		}
+	}
+	p {
+		font-size: 15px;
+		color: black;
+		line-height: 27px;
+		margin: 0;
+		@media #{$bp-small} {
+			font-size: 13px;
+			line-height: 20px;
+		}
+	}
+	.button {
+		padding: 0 23px;
+		margin-top: 10px;
+	}
+}
+
+
+
+
 
 
 

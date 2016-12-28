@@ -29,6 +29,7 @@ gulp.task('browserSync', function() {
 gulp.task('media', function () {
     gulp.src('app/css/style.css')
         .pipe(gcmq())
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('app/css'));
 });
 
@@ -62,7 +63,7 @@ gulp.task('sass', function () {
 	return gulp.src('app/sass/**/*.scss')
 	.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 	.pipe(autoprefixer(['last 15 versions'], { cascade: true }))
-	// .pipe(cleanCSS({compatibility: 'ie8'}))
+	.pipe(cleanCSS({compatibility: 'ie8'}))
 	.pipe(gulp.dest('app/css/'))
 	.pipe(browserSync.reload({
 		stream: true
