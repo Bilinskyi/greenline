@@ -2,10 +2,14 @@
 $(document).ready(function(){
 
 
+	$('.section-stage').on('click', 'h5', function(e) {
+		e.preventDefault(); 
+		$(this).toggleClass('active').next().slideToggle(); 
+	});
+
 	$('.m-h-2').matchHeight({
 		byRow: false 
 	});
-	$('.wrapp-service > div').matchHeight();
 
 
 	$('.btn-hide').on('click', function(e) {
@@ -31,44 +35,70 @@ $(document).ready(function(){
 	})
 
 
+	
+
 	$('.section-carousel-1').owlCarousel({
-			loop:true,
-			margin:0,
-			nav:false,
-			center: true,
-			autoHeight: true,
-			touchDrag: false,
-			mouseDrag: false,
-			dots: true,
-			dotsEach: true,
-			responsiveClass:true,
-			responsiveClass:true,
-			navText: ['',''],
-			responsive:{
-				0:{
-					items:1
-				},
-				600:{
-					items:1
-				},
-				1000:{
-					items:1
-				}
+		loop:true,
+		margin:0,
+		nav:false,
+		center: true,
+		autoHeight: true,
+		touchDrag: false,
+		mouseDrag: false,
+		dots: true,
+		dotsEach: true,
+		responsiveClass:true,
+		responsiveClass:true,
+		navText: ['',''],
+		responsive:{
+			0:{
+				items:1
+			},
+			600:{
+				items:1
+			},
+			1000:{
+				items:1
 			}
-		});
+		}
+	});
 
 
-		var widthItem = $(".section-carousel-1 .owl-item").width();
-		$(".owl-item .item").css("width", widthItem +1)
+	var widthItem = $(".section-carousel-1 .owl-item").width();
+	$(".section-carousel-1 .owl-item .item").css("width", widthItem +1)
 
 
 	$(window).on('load', function() {
 
 
 
-		
+		$('.owl-thumb-slider').owlCarousel({
+			loop:true,
+			margin: 5,
+			nav:true,
+			center: true,
+			autoHeight: true,
+			touchDrag: false,
+			mouseDrag: false,
+			dots: false,
+			dotsEach: true,
+			responsiveClass:true,
+			responsiveClass:true,
+			navText: ['',''],
+			responsive:{
+				0:{
+					items:3
+				},
+				600:{
+					items:3
+				},
+				1000:{
+					items:3
+				}
+			}
+		});	
 
-
+		$('.wrapp-service > div, .m-h-2').matchHeight();
 
 
 		var owl = $('.section-carousel-2');
@@ -204,6 +234,15 @@ $(document).ready(function(){
 
 
 		$('.slider-3 .item').matchHeight();
+
+	});
+
+
+	$("a.fancy-g").fancybox({
+		'hideOnContentClick': true,
+		minWidth : 230,
+		padding : 0,
+		closeBtn : true
 
 	});
 
